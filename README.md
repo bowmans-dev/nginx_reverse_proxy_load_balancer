@@ -5,11 +5,11 @@ _create a directory/folder for your nginx implementation_
 `cd nginx-container`
 <hr>
 
-_run on the default port 80 (for http) `--hostname ng1` is optional_
+_this following example will spin up nginx on the (default port commonly used for http) both the specified port and_ **--hostname ng1** are optional_
 
    `docker run --name nginx --hostname ng1 -p 80:80 -d nginx`
    
-_or the without hostname_
+_or without hostname_
 
    `docker run --name nginx -p 80:80 -d nginx` 
 
@@ -47,9 +47,9 @@ _setup new container:_
  (important:
 make sure to replace this section of the above command: `/home/desk/Desktop/nginx-container/html:` with **your own directory path to the new html folder**)
 
-_
+<hr>
 
-test the new html page is being served instead of the default nginx welcome page:
+test the new html directory content/page is being served instead of the default nginx welcome page:
 
  - `curl http://localhost:80` 
  - _or_ 
