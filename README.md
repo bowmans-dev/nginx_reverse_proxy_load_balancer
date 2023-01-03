@@ -3,9 +3,9 @@
 `cd nginx-container`
 <hr>
 
- - `docker run --name nginx -p 80:80 -d nginx`
+ - `docker run --name nginx --hostname ng1 -p 80:80 -d nginx`
 
- - `curl http://desk:80` 
+ - `curl http://localhost:80` 
  - _or_ 
  _search_ `localhost/ ` _in your browser_
 <hr>
@@ -29,7 +29,7 @@
 
 _setup new container:_
 ```
- docker run --name nginx -p 80:80 -v /home/desk/Desktop/nginx-container/html:/usr/share/nginx/html -d nginx
+ docker run --name nginx --hostname ng1 -p 80:80 -v /home/desk/Desktop/nginx-container/html:/usr/share/nginx/html -d nginx
 ```
 
  (important:
@@ -39,7 +39,7 @@ _
 
 test the new html page is being served instead of the default nginx welcome page:
 
- `curl http://desk:80` 
+ `curl http://localhost:80` 
  _or_ 
  _search_ `localhost/ ` _in your browser_
 
