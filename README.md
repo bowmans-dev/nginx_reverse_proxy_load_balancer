@@ -5,10 +5,13 @@ _create a directory/folder for your nginx implementation_
 `cd nginx-container`
 <hr>
 
-_create an instance of nginx and start running on the default port_
+_run on the default port 80 (for http) `--hostname ng1` is optional_
 
- - `docker run --name nginx --hostname ng1 -p 80:80 -d nginx`
- 
+   `docker run --name nginx --hostname ng1 -p 80:80 -d nginx`
+   
+_or the without hostname_
+
+   `docker run --name nginx -p 80:80 -d nginx` 
 
 _view in CLI or browser:_
 
