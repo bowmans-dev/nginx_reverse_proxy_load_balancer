@@ -47,6 +47,6 @@ _
 _(so far.. nginx is working as a simple webserver)_
 <hr>
 
-_this next section demonstrates how to override the default configuration of nginx setting it up as a reverse proxy which will point to 3 new instances of your continerised app, nginx will be configured to balance the load between them_
+_this next repo: **nginx_reverse_proxy/load_balancer** demonstrates how to override the default configuration of nginx setting it up as a reverse proxy which will point to 3 new instances of your continerised app, nginx will be configured to balance the load between them_
 
 <hr>
