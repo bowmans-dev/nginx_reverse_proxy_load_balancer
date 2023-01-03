@@ -1,16 +1,25 @@
+_create a directory/folder for your nginx implementation_
+
 `mkdir nginx-container`
 
 `cd nginx-container`
 <hr>
 
+_create an instance of nginx and start running on the default port_
+
  - `docker run --name nginx --hostname ng1 -p 80:80 -d nginx`
+ 
+
+_view in CLI or browser:_
 
  - `curl http://localhost:80` 
  - _or_ 
  _search_ `localhost/ ` _in your browser_
+ 
+ (you should see the nginx welcome page)
 <hr>
 
- _create a directory for your html doc_
+ _create a directory/folder for your html file_
  - `mkdir html`
  - `cd html`
  - `vim index.html`   /editor of your choice 
@@ -33,20 +42,18 @@ _setup new container:_
 ```
 
  (important:
-make sure to use **your own local directory path**)
+make sure to replace this section of the above command: `/home/desk/Desktop/nginx-container/html:` with **your own directory path to the new html folder**)
 
 _
 
 test the new html page is being served instead of the default nginx welcome page:
 
- `curl http://localhost:80` 
- _or_ 
+ - `curl http://localhost:80` 
+ - _or_ 
  _search_ `localhost/ ` _in your browser_
 
-_
-_(so far.. nginx is working as a simple webserver)_
+#### (so far.. nginx is being implemented as a simple webserver)
 <hr>
 
-_this next repo: **nginx_reverse_proxy/load_balancer** demonstrates how to override the default configuration of nginx setting it up as a reverse proxy which will point to 3 new instances of your continerised app, nginx will be configured to balance the load between them_
-
+_the next repo: **nginx_reverse_proxy/load_balancer** demonstrates how to override the default configuration of nginx setting it up as a reverse proxy which will point to 3 new instances of your continerised app, nginx will be configured to balance the load between them_
 <hr>
