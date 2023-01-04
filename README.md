@@ -1,17 +1,13 @@
-_create a directory/folder for your nginx implementation_
+_create a directory/folder for your nginx implementation:_
 
 `mkdir nginx-container`
 
 `cd nginx-container`
 <hr>
 
-_this following example will spin up nginx on the (default port commonly used for http) both the specified port and_ **--hostname ng1** are optional_
+_the following example will spin up nginx on the default port commonly used for http (both the specified port and_ **--name ng1** are optional)_
 
-   `docker run --name nginx --hostname ng1 -p 80:80 -d nginx`
-   
-_or without hostname_
-
-   `docker run --name nginx -p 80:80 -d nginx` 
+   `docker run --name ng1 -p 80:80 -d nginx`
 
 _view in CLI or browser:_
 
@@ -22,7 +18,15 @@ _view in CLI or browser:_
  (you should see the nginx welcome page)
 <hr>
 
- _create a directory/folder for your html file_
+ _stop the running demo container:_
+ - `docker stop ng1`
+
+ _delete the demo container:_
+ - `docker rm ng1`
+ 
+<hr>
+
+ _create a directory/folder for your html file:_
  - `mkdir html`
  - `cd html`
  - `vim index.html`   /editor of your choice 
@@ -32,20 +36,14 @@ _view in CLI or browser:_
 
 <hr>
 
- _stop the running demo container:_
- - `docker stop nginx`
-
- _delete the demo container:_
- - `docker rm nginx`
- <hr>
-
 _setup new container:_
+   
+ (**important:**
+make sure to replace this next section: `/home/desk/Desktop/nginx-container/html:` with **your own directory path to the new html folder**)
+   
 ```
- docker run --name nginx --hostname ng1 -p 80:80 -v /home/desk/Desktop/nginx-container/html:/usr/share/nginx/html -d nginx
+ docker run --name ng1 -p 80:80 -v /home/desk/Desktop/nginx-container/html:/usr/share/nginx/html -d nginx
 ```
-
- (important:
-make sure to replace this section of the above command: `/home/desk/Desktop/nginx-container/html:` with **your own directory path to the new html folder**)
 
 <hr>
 
@@ -55,8 +53,8 @@ test the new html directory content/page is being served instead of the default 
  - _or_ 
  _search_ `localhost/ ` _in your browser_
 
-#### (so far.. nginx is being implemented as a simple webserver)
+#### (so far.. nginx is being implemented as a simple web server)
 <hr>
 
-_the next repo: **nginx_reverse_proxy/load_balancer** demonstrates how to override the default configuration of nginx setting it up as a reverse proxy which will point to 3 new instances of your continerised app, nginx will be configured to balance the load between them_
+_the next repo: **nginx_reverse_proxy** demonstrates how to override the default configuration of nginx setting it up as a reverse proxy which will point to 3 new instances of your continerised app, nginx will be configured to balance the load between them_
 <hr>
