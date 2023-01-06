@@ -1,3 +1,12 @@
+https://www.udemy.com/course/nginx-crash-course/
+
+Introduction to NGINX
+Understand and Deploy Layer 4/Layer 7 Load Balancing, WebSockets, HTTPS, HTTP/2, TLS 1.3 with NGINX (With Docker)
+
+1. NGINX as a Web Server
+
+<hr>
+
 _create a directory/folder for your nginx implementation:_
 
 `mkdir nginx-container`
