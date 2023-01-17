@@ -1,5 +1,3 @@
-https://www.udemy.com/course/nginx-crash-course/
-
 Introduction to NGINX
 Understand and Deploy Layer 4/Layer 7 Load Balancing, WebSockets, HTTPS, HTTP/2, TLS 1.3 with NGINX (With Docker)
 
@@ -28,20 +26,30 @@ _view in CLI or browser:_
 <hr>
 
  _stop the running demo container:_
- - `docker stop ng1`
+ `docker stop ng1`
 
  _delete the demo container:_
- - `docker rm ng1`
+ `docker rm ng1`
  
 <hr>
 
  _create a directory/folder for your html file:_
- - `mkdir html`
- - `cd html`
- - `vim index.html`   /editor of your choice 
+ `mkdir html`
+ `cd html`
+ `vim index.html`   /editor of your choice 
  
  _add your index page e.g:_
-###### <code>```<html><body><h1> Hello Mars <h1></body></html>```</code>
+######
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+   <h1> Hello Mars <h1>
+</body>
+</html>
+```
 
 <hr>
 
@@ -58,12 +66,12 @@ make sure to replace this next section: `/home/desk/Desktop/nginx-container/html
 
 test the new html directory content/page is being served instead of the default nginx welcome page:
 
- - `curl http://localhost:80` 
+ `curl http://localhost:80` 
  - _or_ 
  _search_ `localhost/ ` _in your browser_
 
 #### (so far.. nginx is being implemented as a simple web server)
+
 <hr>
 
-_the next repo: **nginx_reverse_proxy** demonstrates how to override the default configuration of nginx setting it up as a reverse proxy which will point to 3 new instances of your continerised app, nginx will be configured to balance the load between them_
-<hr>
+The next part of this course: https://www.udemy.com/course/nginx-crash-course/ demonstrates how to override the default configuration of nginx setting it up as a reverse proxy which will point to 3 new instances of your continerised app, nginx will be configured to balance the load between them
